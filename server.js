@@ -43,6 +43,60 @@ app.get("/", (req, res) => {
     path.join(__dirname, "index.html")
   );
 });
+/* STUDENT SIGNUP */
+app.post("/api/signup", (req, res) => {
+  const {
+    name,
+    id,
+    password,
+    department,
+    phone,
+    email
+  } = req.body;
+  if (!name || !id || !password || !department) {
+    return res.status(400).json({
+      success: false,
+      message: "ناو، ID، وشەی نهێنی و بەش پڕ بکەرەوە."
+    });
+  }
+  if (password.length < 4) {
+    return res.status(400).json({
+      success: false,
+      message: "وشەی نهێنی دەبێت لانیکەم ٤ پیت بێت."
+    });
+  }
+  const db = readDB();
+  const exists = db.students.some(
+    student => student.id === id
+  );
+  if (exists) {
+    return res.status(409).json({
+      success: false,
+      message: "ئەم ID ـە پێشتر بەکارهاتووە."
+    });
+  }
+  const newStudent = {
+    name,
+    id,
+    password,
+    department,
+    phone: phone || "",
+    email: email || ""
+  };
+  db.students.push(newStudent);
+  saveDB(db);
+  res.status(201).json({
+    success: true,
+    message: "ئەکاونتەکەت بە سەرکەوتوویی دروستکرا.",
+    student: {
+      name,
+      id,
+      department,
+      phone: phone || "",
+      email: email || ""
+    }
+  });
+});
 /* STUDENT LOGIN */
 app.post("/api/login", (req, res) => {
   const { id, password } = req.body;
@@ -76,7 +130,7 @@ app.post("/api/login", (req, res) => {
   res.json({
     success: true,
     role: "student",
-    student: student
+    student
   });
 });
 /* GET STUDENTS */
@@ -135,8 +189,8 @@ app.post("/api/students", (req, res) => {
       name,
       id,
       department,
-      phone,
-      email
+      phone: phone || "",
+      email: email || ""
     }
   });
 });
@@ -158,6 +212,14 @@ app.delete("/api/students/:id", (req, res) => {
   res.json({
     success: true,
     message: "قوتابی سڕایەوە."
+  });
+});
+/* SERVER ERROR HANDLER */
+app.use((err, req, res, next) => {
+  console.error("SERVER ERROR:", err);
+  res.status(500).json({
+    success: false,
+    message: "هەڵەی ناوخۆی سێرڤەر ڕوویدا."
   });
 });
 /* START SERVER */
