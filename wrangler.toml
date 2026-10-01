@@ -1,5 +1,3 @@
-name = "zansti-sardam"
+name = "zansti-sardam-api"
+main = "worker.js"
 compatibility_date = "2026-10-01"
-
-[assets]
-directory = "./public"
