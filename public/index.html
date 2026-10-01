@@ -1,1 +1,1054 @@
-
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<title>Zansti Sardam Institute</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow:
+    0 3px 15px rgba(0,0,0,.1);
+}
+.logo {
+  color: #123c73;
+  font-size: 21px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+nav a {
+  text-decoration: none;
+  color: #172033;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #1769aa;
+}
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 12px 22px;
+  background: #123c73;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0b2b54;
+}
+/* HERO */
+.hero {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  background:
+    linear-gradient(
+      135deg,
+      #123c73,
+      #1769aa
+    );
+}
+.hero h1 {
+  font-size: 46px;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 21px;
+  margin-bottom: 30px;
+}
+.hero button {
+  background: white;
+  color: #123c73;
+}
+/* SECTIONS */
+section {
+  padding: 70px 7%;
+  text-align: center;
+}
+section h2 {
+  color: #123c73;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+/* CARDS */
+.cards,
+.dashboard-cards,
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.card,
+.dashboard-card,
+.admin-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+}
+.card {
+  width: 250px;
+  font-size: 35px;
+}
+.card h3 {
+  font-size: 20px;
+}
+/* LOGIN */
+.login-section {
+  background: #eef3f9;
+}
+.login-box {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  padding: 35px 28px;
+  border-radius: 18px;
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.1);
+}
+.login-icon {
+  font-size: 45px;
+}
+.login-box input,
+.admin-form input {
+  width: 100%;
+  padding: 15px;
+  margin: 7px 0;
+  border: 1px solid #d5dce6;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: right;
+}
+.login-box button {
+  width: 100%;
+  margin-top: 12px;
+}
+#message,
+#adminMessage {
+  font-weight: bold;
+}
+/* DASHBOARD */
+.dashboard,
+.admin-panel {
+  display: none;
+  background: #f4f7fb;
+}
+.dashboard-header,
+.admin-header {
+  max-width: 1100px;
+  margin: auto auto 35px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.07);
+}
+.dashboard-card {
+  width: 210px;
+}
+.dashboard-card span,
+.admin-card span {
+  font-size: 35px;
+}
+.dashboard-card h3,
+.admin-card h3 {
+  color: #123c73;
+}
+/* TABLE */
+.dashboard-table,
+.admin-form {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.07);
+  overflow-x: auto;
+}
+.admin-form {
+  max-width: 700px;
+}
+.admin-form button {
+  margin-top: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #123c73;
+  color: white;
+}
+.table-button {
+  padding: 7px 12px;
+  margin: 3px;
+  font-size: 13px;
+}
+.delete-button {
+  background: #b91c1c;
+}
+.delete-button:hover {
+  background: #7f1d1d;
+}
+/* NOTICE */
+.notice {
+  max-width: 1100px;
+  margin: 35px auto 0;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.07);
+}
+.notice-item {
+  padding: 15px;
+  margin: 10px 0;
+  background: #eef3f9;
+  border-radius: 10px;
+}
+/* FOOTER */
+footer {
+  background: #101827;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+/* MOBILE */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+  .dashboard-header,
+  .admin-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    🎓 Zansti Sardam Institute
+  </div>
+  <nav>
+    <a href="#home">
+      سەرەتا
+    </a>
+    <a href="#about">
+      دەربارە
+    </a>
+    <a href="#colleges">
+      بەشەکان
+    </a>
+    <a href="#news">
+      هەواڵ
+    </a>
+    <a href="#contact">
+      پەیوەندی
+    </a>
+    <a href="#login">
+      Login
+    </a>
+  </nav>
+  <button onclick="goLogin()">
+    🔐 Login
+  </button>
+</header>
+<!-- HOME -->
+<section id="home" class="hero">
+  <h1>
+    بەخێربێیت بۆ Zansti Sardam Institute 🎓
+  </h1>
+  <p>
+    شوێنی زانست، پەروەردە و داهێنان
+  </p>
+  <button onclick="goAbout()">
+    دەستپێکردن
+  </button>
+</section>
+<!-- ABOUT -->
+<section id="about">
+  <h2>
+    دەربارەی پەیمانگا
+  </h2>
+  <p>
+    بەخێربێن بۆ Zansti Sardam Institute.
+  </p>
+  <p>
+    لێرە ژینگەیەکی نوێ بۆ فێربوون،
+    زانست و پەرەپێدانی توانا دروست دەکرێت.
+  </p>
+</section>
+<!-- COLLEGES -->
+<section id="colleges">
+  <h2>
+    🏛️ بەشەکان
+  </h2>
+  <div class="cards">
+    <div class="card">
+      💻
+      <h3>
+        تەکنەلۆجیا
+      </h3>
+      <p>
+        کۆمپیوتەر و سیستەمەکان
+      </p>
+    </div>
+    <div class="card">
+      🔬
+      <h3>
+        زانست
+      </h3>
+      <p>
+        زانستە سروشتییەکان
+      </p>
+    </div>
+    <div class="card">
+      📚
+      <h3>
+        پەروەردە
+      </h3>
+      <p>
+        زانستی پەروەردە و مامۆستایەتی
+      </p>
+    </div>
+  </div>
+</section>
+<!-- NEWS -->
+<section id="news">
+  <h2>
+    📰 هەواڵەکان
+  </h2>
+  <div class="cards">
+    <div class="card">
+      📢
+      <h3>
+        تۆمارکردنی قوتابیان
+      </h3>
+      <p>
+        زانیارییە نوێکان بە زوویی بڵاودەکرێنەوە.
+      </p>
+    </div>
+    <div class="card">
+      🎓
+      <h3>
+        ڕووداوەکانی پەیمانگا
+      </h3>
+      <p>
+        چاڵاکی و ڕووداوە زانستییەکان.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>
+    📞 پەیوەندی
+  </h2>
+  <p>
+    📧 info@zansti.sardam.institute
+  </p>
+  <p>
+    🌐 zansti.sardam.institute
+  </p>
+</section>
+<!-- LOGIN -->
+<section id="login" class="login-section">
+  <div class="login-box">
+    <div class="login-icon">
+      🔐
+    </div>
+    <h2>
+      چوونەژوورەوە
+    </h2>
+    <p>
+      ID و وشەی نهێنی بنووسە
+    </p>
+    <input
+      id="studentId"
+      type="text"
+      placeholder="ID"
+    >
+    <input
+      id="password"
+      type="password"
+      placeholder="وشەی نهێنی"
+    >
+    <button onclick="login()">
+      چوونەژوورەوە
+    </button>
+    <p id="message"></p>
+  </div>
+</section>
+<!-- STUDENT DASHBOARD -->
+<section id="dashboard" class="dashboard">
+  <div class="dashboard-header">
+    <div>
+      <h2>
+        🎓 داشبۆردی قوتابی
+      </h2>
+      <p>
+        بەخێربێیت،
+        <span id="studentName">
+          -
+        </span>
+      </p>
+    </div>
+    <button onclick="logout()">
+      🚪 چوونەدەرەوە
+    </button>
+  </div>
+  <div class="dashboard-cards">
+    <div class="dashboard-card">
+      <span>👤</span>
+      <h3>
+        ناوی قوتابی
+      </h3>
+      <p id="studentNameCard">
+        -
+      </p>
+    </div>
+    <div class="dashboard-card">
+      <span>🆔</span>
+      <h3>
+        ژمارەی قوتابی
+      </h3>
+      <p id="studentIdCard">
+        -
+      </p>
+    </div>
+    <div class="dashboard-card">
+      <span>🏫</span>
+      <h3>
+        بەش
+      </h3>
+      <p id="studentDepartment">
+        -
+      </p>
+    </div>
+    <div class="dashboard-card">
+      <span>📅</span>
+      <h3>
+        ساڵی خوێندن
+      </h3>
+      <p>
+        2026 - 2027
+      </p>
+    </div>
+    <div class="dashboard-card">
+      <span>📞</span>
+      <h3>
+        مۆبایل
+      </h3>
+      <p id="studentPhone">
+        -
+      </p>
+    </div>
+    <div class="dashboard-card">
+      <span>📧</span>
+      <h3>
+        ئیمەیڵ
+      </h3>
+      <p id="studentEmail">
+        -
+      </p>
+    </div>
+  </div>
+  <div class="dashboard-table">
+    <h2>
+      📚 وانەکان و نمرەکان
+    </h2>
+    <table>
+      <tr>
+        <th>
+          وانە
+        </th>
+        <th>
+          مامۆستا
+        </th>
+        <th>
+          نمرە
+        </th>
+      </tr>
+      <tr>
+        <td>
+          کۆمپیوتەر
+        </td>
+        <td>
+          مامۆستا 1
+        </td>
+        <td>
+          90
+        </td>
+      </tr>
+      <tr>
+        <td>
+          بیرکاری
+        </td>
+        <td>
+          مامۆستا 2
+        </td>
+        <td>
+          85
+        </td>
+      </tr>
+      <tr>
+        <td>
+          زانست
+        </td>
+        <td>
+          مامۆستا 3
+        </td>
+        <td>
+          80
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="notice">
+    <h2>
+      📢 ئاگادارییەکان
+    </h2>
+    <div class="notice-item">
+      📚 تاقیکردنەوەی کۆتایی نزیکە.
+    </div>
+    <div class="notice-item">
+      📢 تکایە کاتی وانەکانت بەدواداچوون بکە.
+    </div>
+  </div>
+</section>
+<!-- ADMIN PANEL -->
+<section id="adminPanel" class="admin-panel">
+  <div class="admin-header">
+    <div>
+      <h2>
+        👨‍💼 Admin Panel
+      </h2>
+      <p>
+        بەڕێوەبردنی Zansti Sardam Institute
+      </p>
+    </div>
+    <button onclick="adminLogout()">
+      🚪 Logout
+    </button>
+  </div>
+  <div class="admin-actions">
+    <div class="admin-card">
+      <span>
+        👨‍🎓
+      </span>
+      <h3>
+        قوتابیان
+      </h3>
+      <p id="studentCount">
+        0
+      </p>
+    </div>
+    <div class="admin-card">
+      <span>
+        📚
+      </span>
+      <h3>
+        وانەکان
+      </h3>
+      <p>
+        6
+      </p>
+    </div>
+    <div class="admin-card">
+      <span>
+        📊
+      </span>
+      <h3>
+        نمرەکان
+      </h3>
+      <p>
+        بەڕێوەبردن
+      </p>
+    </div>
+    <div class="admin-card">
+      <span>
+        💳
+      </span>
+      <h3>
+        قسطەکان
+      </h3>
+      <p>
+        بەڕێوەبردن
+      </p>
+    </div>
+  </div>
+  <!-- ADD STUDENT -->
+  <div class="admin-form">
+    <h2>
+      ➕ زیادکردنی قوتابی
+    </h2>
+    <input
+      id="newName"
+      type="text"
+      placeholder="ناوی قوتابی"
+    >
+    <input
+      id="newId"
+      type="text"
+      placeholder="ID ـی قوتابی"
+    >
+    <input
+      id="newPassword"
+      type="password"
+      placeholder="وشەی نهێنی"
+    >
+    <input
+      id="newDepartment"
+      type="text"
+      placeholder="بەش"
+    >
+    <input
+      id="newPhone"
+      type="text"
+      placeholder="ژمارەی مۆبایل"
+    >
+    <input
+      id="newEmail"
+      type="email"
+      placeholder="ئیمەیڵ"
+    >
+    <button onclick="addStudent()">
+      ➕ زیادکردنی قوتابی
+    </button>
+    <p id="adminMessage"></p>
+  </div>
+  <!-- STUDENTS -->
+  <div class="dashboard-table">
+    <h2>
+      👨‍🎓 لیستی قوتابیان
+    </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            ناو
+          </th>
+          <th>
+            ID
+          </th>
+          <th>
+            بەش
+          </th>
+          <th>
+            مۆبایل
+          </th>
+          <th>
+            کردار
+          </th>
+        </tr>
+      </thead>
+      <tbody id="studentsTable">
+      </tbody>
+    </table>
+  </div>
+</section>
+<footer>
+  © 2026 Zansti Sardam Institute
+  — هەموو مافەکان پارێزراوە
+</footer>
+<script>
+/* SCROLL */
+function goLogin() {
+  document
+    .getElementById("login")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+}
+function goAbout() {
+  document
+    .getElementById("about")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+}
+/* LOGIN */
+async function login() {
+  const id =
+    document
+      .getElementById("studentId")
+      .value
+      .trim();
+  const password =
+    document
+      .getElementById("password")
+      .value
+      .trim();
+  const message =
+    document.getElementById("message");
+  if (!id || !password) {
+    message.textContent =
+      "تکایە ID و وشەی نهێنی بنووسە.";
+    message.style.color = "red";
+    return;
+  }
+  try {
+    const response =
+      await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+        body: JSON.stringify({
+          id,
+          password
+        })
+      });
+    const data =
+      await response.json();
+    if (!data.success) {
+      message.textContent =
+        data.message;
+      message.style.color =
+        "red";
+      return;
+    }
+    message.textContent =
+      "چوونەژوورەوە سەرکەوتوو بوو ✅";
+    message.style.color =
+      "green";
+    setTimeout(function() {
+      document
+        .getElementById("login")
+        .style.display = "none";
+      if (data.role === "admin") {
+        document
+          .getElementById("adminPanel")
+          .style.display = "block";
+        loadStudents();
+        document
+          .getElementById("adminPanel")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+      }
+      else {
+        showStudent(data.student);
+      }
+    }, 400);
+  }
+  catch (error) {
+    message.textContent =
+      "پەیوەندی بە سێرڤەر نەکرا ❌";
+    message.style.color =
+      "red";
+  }
+}
+/* SHOW STUDENT */
+function showStudent(student) {
+  document
+    .getElementById("studentName")
+    .textContent =
+      student.name;
+  document
+    .getElementById("studentNameCard")
+    .textContent =
+      student.name;
+  document
+    .getElementById("studentIdCard")
+    .textContent =
+      student.id;
+  document
+    .getElementById("studentDepartment")
+    .textContent =
+      student.department;
+  document
+    .getElementById("studentPhone")
+    .textContent =
+      student.phone;
+  document
+    .getElementById("studentEmail")
+    .textContent =
+      student.email;
+  document
+    .getElementById("dashboard")
+    .style.display =
+      "block";
+  document
+    .getElementById("dashboard")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+}
+/* LOAD STUDENTS */
+async function loadStudents() {
+  try {
+    const response =
+      await fetch("/api/students");
+    const students =
+      await response.json();
+    const table =
+      document
+        .getElementById("studentsTable");
+    table.innerHTML = "";
+    students.forEach(function(student) {
+      const row =
+        document.createElement("tr");
+      row.innerHTML = `
+        <td>
+          ${student.name}
+        </td>
+        <td>
+          ${student.id}
+        </td>
+        <td>
+          ${student.department}
+        </td>
+        <td>
+          ${student.phone || "-"}
+        </td>
+        <td>
+          <button
+            class="table-button delete-button"
+            onclick="deleteStudent('${student.id}')">
+            🗑️ سڕینەوە
+          </button>
+        </td>
+      `;
+      table.appendChild(row);
+    });
+    document
+      .getElementById("studentCount")
+      .textContent =
+        students.length;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+/* ADD STUDENT */
+async function addStudent() {
+  const name =
+    document
+      .getElementById("newName")
+      .value
+      .trim();
+  const id =
+    document
+      .getElementById("newId")
+      .value
+      .trim();
+  const password =
+    document
+      .getElementById("newPassword")
+      .value
+      .trim();
+  const department =
+    document
+      .getElementById("newDepartment")
+      .value
+      .trim();
+  const phone =
+    document
+      .getElementById("newPhone")
+      .value
+      .trim();
+  const email =
+    document
+      .getElementById("newEmail")
+      .value
+      .trim();
+  const message =
+    document
+      .getElementById("adminMessage");
+  if (
+    !name ||
+    !id ||
+    !password ||
+    !department
+  ) {
+    message.textContent =
+      "تکایە خانە سەرەکییەکان پڕ بکەرەوە.";
+    message.style.color =
+      "red";
+    return;
+  }
+  try {
+    const response =
+      await fetch("/api/students", {
+        method: "POST",
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          id,
+          password,
+          department,
+          phone,
+          email
+        })
+      });
+    const data =
+      await response.json();
+    if (!data.success) {
+      message.textContent =
+        data.message;
+      message.style.color =
+        "red";
+      return;
+    }
+    message.textContent =
+      "قوتابی بە سەرکەوتوویی زیادکرا ✅";
+    message.style.color =
+      "green";
+    document
+      .getElementById("newName")
+      .value = "";
+    document
+      .getElementById("newId")
+      .value = "";
+    document
+      .getElementById("newPassword")
+      .value = "";
+    document
+      .getElementById("newDepartment")
+      .value = "";
+    document
+      .getElementById("newPhone")
+      .value = "";
+    document
+      .getElementById("newEmail")
+      .value = "";
+    loadStudents();
+  }
+  catch (error) {
+    message.textContent =
+      "هەڵەی پەیوەندی بە سێرڤەر.";
+    message.style.color =
+      "red";
+  }
+}
+/* DELETE STUDENT */
+async function deleteStudent(id) {
+  if (
+    !confirm(
+      "دڵنیایت لە سڕینەوەی ئەم قوتابییە؟"
+    )
+  ) {
+    return;
+  }
+  try {
+    const response =
+      await fetch(
+        "/api/students/" +
+        encodeURIComponent(id),
+        {
+          method: "DELETE"
+        }
+      );
+    const data =
+      await response.json();
+    if (data.success) {
+      loadStudents();
+    }
+    else {
+      alert(data.message);
+    }
+  }
+  catch (error) {
+    alert(
+      "هەڵەی پەیوەندی بە سێرڤەر."
+    );
+  }
+}
+/* LOGOUT */
+function logout() {
+  document
+    .getElementById("dashboard")
+    .style.display = "none";
+  document
+    .getElementById("login")
+    .style.display = "block";
+  document
+    .getElementById("studentId")
+    .value = "";
+  document
+    .getElementById("password")
+    .value = "";
+  document
+    .getElementById("message")
+    .textContent = "";
+  goLogin();
+}
+function adminLogout() {
+  document
+    .getElementById("adminPanel")
+    .style.display = "none";
+  document
+    .getElementById("login")
+    .style.display = "block";
+  document
+    .getElementById("studentId")
+    .value = "";
+  document
+    .getElementById("password")
+    .value = "";
+  document
+    .getElementById("message")
+    .textContent = "";
+  goLogin();
+}
+</script>
+</body>
+</html>
